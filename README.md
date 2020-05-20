@@ -33,7 +33,7 @@ A collection of lecutre notes and coding example of d3 from [https://www.udemy.c
 
 ### Javascript and SVG Fundamentals <a name="js-svg-fund"></a>
 
-[Click here to go to code examples](/javascript_and_svg_fundamentals)
+[Click here to go to code examples](./javascript_and_svg_fundamentals)
 
 #### JavaScript Arrays & Objects
 
@@ -111,7 +111,7 @@ To create a text path you must first create a definition using the path element.
 
 ### D3 Fundamentals <a name="d3-fund"></a>
 
-[Click here to go to code examples](/d3_fundamentals)
+[Click here to go to code examples](./d3_fundamentals)
 
 #### Setting Up
 
@@ -155,7 +155,7 @@ Each transformation function can accept an anonymous function which will passed 
 
 ### Getting to know Scales <a name="scales"></a>
 
-[Click here to go to code examples](/scales)
+[Click here to go to code examples](./scales)
 
 #### First Steps
 
@@ -225,7 +225,7 @@ Each transformation function can accept an anonymous function which will passed 
 
 ### Animations and Interactivity <a name="anim-int"></a>
 
-[Click here to go to code examples](/animations_and_interactivity)
+[Click here to go to code examples](./animations_and_interactivity)
 
 #### Ordinal Scales
 
@@ -306,7 +306,7 @@ Each transformation function can accept an anonymous function which will passed 
 
 ### Layouts <a name="layouts"></a>
 
-[Click here to go to code examples](/layouts)
+[Click here to go to code examples](./layouts)
 
 #### Line Charts
 
@@ -343,7 +343,7 @@ You have the option of specifying the coordinates together or specifying them se
 
 ### Maps <a name="maps"></a>
 
-[Click here to go to code examples](/maps)
+[Click here to go to code examples](./maps)
 
 #### GeoJSON Overview
 
@@ -391,7 +391,7 @@ Panning only works well for maps that are zoomed in so be sure to increase the s
 
 ### Wrapping up <a name="wrapping"></a>
 
-[Click here to go to code examples](/wrapping)
+[Click here to go to code examples](./wrapping)
 
 #### Responsive Charts
 
