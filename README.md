@@ -33,6 +33,8 @@ A collection of lecutre notes and coding example of d3 from [https://www.udemy.c
 
 ### Javascript and SVG Fundamentals <a name="js-svg-fund"></a>
 
+[Click here to go to code examples](/javascript_and_svg_fundamentals)
+
 #### JavaScript Arrays & Objects
 
 - Arrays are a way to store multiple values in 1 variable. Arrays can hold any type of data including numbers, strings, Booleans, functions and objects.
@@ -109,6 +111,8 @@ To create a text path you must first create a definition using the path element.
 
 ### D3 Fundamentals <a name="d3-fund"></a>
 
+[Click here to go to code examples](/d3_fundamentals)
+
 #### Setting Up
 
 - It’s always good practice to set the character encoding of your HTML documents. When working with D3 you’ll be dealing with a lot of data so it’s important that everything works as intended.
@@ -150,6 +154,8 @@ Each transformation function can accept an anonymous function which will passed 
 - JSON files hardly get affected as they’re objects and arrays to begin with. It’s preferable to use JSON code rather than CSV for consistency.
 
 ### Getting to know Scales <a name="scales"></a>
+
+[Click here to go to code examples](/scales)
 
 #### First Steps
 
@@ -218,6 +224,8 @@ Each transformation function can accept an anonymous function which will passed 
 - The tickFormat() function will allow you to format the text that gets outputted for each tick. You are provided the data for each tick so you can manipulate it appropriately.
 
 ### Animations and Interactivity <a name="anim-int"></a>
+
+[Click here to go to code examples](/animations_and_interactivity)
 
 #### Ordinal Scales
 
@@ -298,6 +306,8 @@ Each transformation function can accept an anonymous function which will passed 
 
 ### Layouts <a name="layouts"></a>
 
+[Click here to go to code examples](/layouts)
+
 #### Line Charts
 
 - The D3 shape contains functions for creating complex shapes using the path element exclusively.
@@ -332,6 +342,8 @@ You have the option of specifying the coordinates together or specifying them se
 - D3 will examine the data’s coordinates and determine if the shapes are too close or too far. It will then proceed to adjust the coordinates until they’re within the boundaries set. The ticks event allows you to listen for every change.
 
 ### Maps <a name="maps"></a>
+
+[Click here to go to code examples](/maps)
 
 #### GeoJSON Overview
 
@@ -378,6 +390,8 @@ Panning only works well for maps that are zoomed in so be sure to increase the s
 - You need to use the scaleBy() function to zoom  the map when zooming is done in an unnatural manner.
 
 ### Wrapping up <a name="wrapping"></a>
+
+[Click here to go to code examples](/wrapping)
 
 #### Responsive Charts
 
