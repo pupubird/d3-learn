@@ -31,6 +31,8 @@ A collection of lecutre notes and coding example of d3 from [https://www.udemy.c
 - 5 tips for creating great visualizations are: Understanding your audience, choosing an appropriate visual, remove clutter, draw attention using shape size & color, and lastly telling a story.
 - D3 stands for data driven documents. It’s important to understand that data is what drives the visualization, NOT the other way around.
 
+----
+
 ### Javascript and SVG Fundamentals <a name="js-svg-fund"></a>
 
 [Click here to go to code examples](javascript_and_svg_fundamentals/)
@@ -109,6 +111,8 @@ To create a text path you must first create a definition using the path element.
 - SVG files will have special attributes when you’re creating them as a separate file. This is just for the browser to better understand everything inside.
 - D3 is used with SVG to create graphs and charts so be prepared to use it when we get started in the next section!
 
+----
+
 ### D3 Fundamentals <a name="d3-fund"></a>
 
 [Click here to go to code examples](d3_fundamentals/)
@@ -152,6 +156,8 @@ Each transformation function can accept an anonymous function which will passed 
 - CSV files are comma separated values. Each line is considered a row. Each comma separated value is considered a column. The first row is used as the column names.
 - D3 takes the time to convert CSV data into objects and arrays depending on how it’s formatted.
 - JSON files hardly get affected as they’re objects and arrays to begin with. It’s preferable to use JSON code rather than CSV for consistency.
+
+----
 
 ### Getting to know Scales <a name="scales"></a>
 
@@ -222,6 +228,8 @@ Each transformation function can accept an anonymous function which will passed 
 - The ticks() function allows you to set a number of ticks an axis should have. The number will only be taken as a suggestion.
 - The tickValues() function will allow you to completely control how many ticks are outputted along with the actual values themselves. D3 will take the time to space them out.
 - The tickFormat() function will allow you to format the text that gets outputted for each tick. You are provided the data for each tick so you can manipulate it appropriately.
+
+----
 
 ### Animations and Interactivity <a name="anim-int"></a>
 
@@ -304,6 +312,8 @@ Each transformation function can accept an anonymous function which will passed 
 - You can create tooltips using SVG, but this is the most complex solution since SVG has a complex shape and coordinate system.
 - The final solution is to just use plain HTML. The CSS position properties make it easy to create tooltips. This is one of the solutions where using HTML and SVG is ideal.
 
+----
+
 ### Layouts <a name="layouts"></a>
 
 [Click here to go to code examples](layouts/)
@@ -340,6 +350,8 @@ You have the option of specifying the coordinates together or specifying them se
 - Along with your usual data you also need to specify the relationships between the data.
 - To create a force, you need to use the forceSimulation() function and pass in the different forces using the force() function. This function will determine the behavior of the visualization.
 - D3 will examine the data’s coordinates and determine if the shapes are too close or too far. It will then proceed to adjust the coordinates until they’re within the boundaries set. The ticks event allows you to listen for every change.
+
+----
 
 ### Maps <a name="maps"></a>
 
@@ -388,6 +400,8 @@ Panning only works well for maps that are zoomed in so be sure to increase the s
 - The D3 drag library can also handle zooming. Natural zooming and panning needs to be in sync with unnatural zooming and panning.
 - You need to use the translateBy() function to move the map when panning is done in an unnatural manner.
 - You need to use the scaleBy() function to zoom  the map when zooming is done in an unnatural manner.
+
+----
 
 ### Wrapping up <a name="wrapping"></a>
 
