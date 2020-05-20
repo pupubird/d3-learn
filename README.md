@@ -33,7 +33,7 @@ A collection of lecutre notes and coding example of d3 from [https://www.udemy.c
 
 ### Javascript and SVG Fundamentals <a name="js-svg-fund"></a>
 
-[Click here to go to code examples](javascript_and_svg_fundamentals/README.md)
+[Click here to go to code examples](javascript_and_svg_fundamentals/)
 
 #### JavaScript Arrays & Objects
 
