@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="d3-learn">d3 Learn</h1>
+        <p>A collection of lecutre notes and coding example of d3 from <a
+                href="/https://www.udemy.com/course/learn-d3js-for-data-visualization/">https://www.udemy.com/course/learn-d3js-for-data-visualization/</a>
+            course, I will strongly suggest anyone who would like to get started
+            with d3
+            to go purchase his courses, it provides
+            a very good fundamental and a good start to your data visualization
+            journey</p>
+        <p>To take a look on the examples, you may checkout the source code or
+            run:</p>
+        <pre><code class="lang-bash"><span class="hljs-keyword">node</span> <span class="hljs-title">app</span>.js
+    </code></pre>
+        <p>A localhost server will be hosted in port 3000</p>
+        <h2 id="table-of-contents">Table of contents</h2>
+        <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#js-svg-fund">Javascript and SVG Fundamentals</a></li>
+            <li><a href="#d3-fund">D3 Fundamentals</a></li>
+            <li><a href="#scales">Getting to know Scales</a></li>
+            <li><a href="#anim-int">Animations and Interactivity</a></li>
+            <li><a href="#layouts">Layouts</a></li>
+            <li><a href="#maps">Maps</a></li>
+            <li><a href="#wrapping">Wrapping up</a></li>
+        </ol>
+        <hr>
+        <h2 id="introduction-a-name-introduction-a-">Introduction <a
+                name="introduction"></a></h2>
+        <h3 id="setting-up-a-local-server">Setting up a Local Server</h3>
+        <ul>
+            <li>D3.js is a client side library that works alongside with HTML,
+                CSS and
+                JavaScript. It’s important to have an
+                editor that supports all 3 in order to use it.</li>
+            <li>While D3 is used on the browser, we’ll be requesting data from
+                external
+                sources which requires a server. You can
+                not open up HTML files directly in the browser.</li>
+            <li>I recommend using WebStorm by JetBrains. It is a premium editor
+                that
+                will take care of creating a server for
+                you. This will allow you to focus more on your code.</li>
+            <li>A free alternative is XAMPP. XAMPP is a program that creates a
+                server
+                and bundles other programs useful for web
+                development. It’s not required to use or know those programs for
+                D3.</li>
+        </ul>
+        <h3 id="understanding-d3-data-visualization">Understanding D3 &amp; Data
+            Visualization</h3>
+        <ul>
+            <li>Data visualization is the ability to tell a story or an idea
+                through
+                visuals and graphics. As the old saying
+                goes, “A picture is worth a thousand words.”</li>
+            <li>Data visualizations can help users explore patterns in their
+                data and
+                even notice disruptions.</li>
+            <li>5 tips for creating great visualizations are: Understanding your
+                audience, choosing an appropriate visual,
+                remove clutter, draw attention using shape size &amp; color, and
+                lastly
+                telling a story.</li>
+            <li>D3 stands for data driven documents. It’s important to
+                understand that
+                data is what drives the visualization,
+                NOT the other way around.</li>
+        </ul>
+        <hr>
+        <h3 id="javascript-and-svg-fundamentals-a-name-js-svg-fund-a-">Javascript
+            and
+            SVG Fundamentals <a name="js-svg-fund"></a></h3>
+        <p><a href="/javascript_and_svg_fundamentals/index.html">Click here to
+                go to code
+                examples</a></p>
+        <h3 id="javascript-arrays-objects">JavaScript Arrays &amp; Objects</h3>
+        <ul>
+            <li>Arrays are a way to store multiple values in 1 variable. Arrays
+                can hold
+                any type of data including numbers,
+                strings, Booleans, functions and objects.</li>
+            <li>Arrays will automatically assign each value inside it a
+                position. A
+                position is a way to reference a value in
+                the array. Positions start at 0 and go up as more values are
+                added.</li>
+            <li>Objects are similar to arrays that can hold multiple values in a
+                single
+                variable. The difference is that you
+                have to name your values along with the value.</li>
+        </ul>
+        <h3 id="what-is-svg">What is SVG</h3>
+        <ul>
+            <li>SVG stands for Scalable Vector Graphics. It’s a special image
+                format
+                rather than the traditional jpg, jpeg, gif,
+                png and bmp extensions.</li>
+            <li>SVG images are created and edited through code. Not something
+                that can
+                necessarily be created sing cameras or
+                image manipulation software like Photoshop.</li>
+            <li>What makes SVG so great is that you can resize images without
+                loss of
+                quality. Image maintain their consistency
+                and shape without having pixelated edges.</li>
+            <li>SVG images require a lot of resources so you should only use
+                them for
+                basic images.</li>
+        </ul>
+        <h3 id="creating-svg-images">Creating SVG Images</h3>
+        <ul>
+            <li>To create an SVG image you use the <code>&lt;svg&gt;</code>
+                element.
+                Most web browsers support SVG images by
+                default so you shouldn’t face any compatibility issues.</li>
+            <li>SVG images can have CSS classes and JavaScript events applied to
+                them.
+                This makes them easier to work with
+                rather than a plain image.</li>
+            <li>Not all CSS properties are supported. Some elements related to
+                SVG
+                require certain values and properties. You’ll
+                learn what those are throughout this course.</li>
+        </ul>
+        <h3 id="svg-rectangles">SVG Rectangles</h3>
+        <ul>
+            <li>SVG rectangle elements require that you set the width and height
+                attributes. Otherwise nothing will appear on
+                the screen.</li>
+            <li>The fill attribute allows you to change the color of a SVG
+                shape. You
+                can’t use the background-color property on
+                a SVG element. It will be ignored. The value for the fill can be
+                named
+                colors, rgb, hex and hsv.</li>
+            <li>The stroke property will apply a border around a shape. Just
+                like the
+                fill property, this can only be applied to
+                shapes. You also need to set the stroke-width or else the stroke
+                won’t
+                appear.</li>
+        </ul>
+        <h3 id="svg-circles-ellipses-and-lines">SVG Circles, Ellipses, and Lines</h3>
+        <ul>
+            <li>The circle element requires that you define the r attribute
+                which will
+                set its radius. The radius is the
+                distance from the center of the circle to any of it’s edges.</li>
+            <li>The coordinate system works a bit differently. Circles are moved
+                from
+                their center points so you need to use the
+                attributes cx and cy appropriately.</li>
+            <li>An ellipse works similar to the circle element, but you’re
+                required to
+                set the radius for the x and y axis.</li>
+            <li>Lines require that you set 2 coordinates which can be set using
+                x1, y1,
+                x2, and y2. Lines don’t have a fill so
+                you need to use the stroke attribute to set the color.</li>
+        </ul>
+        <h3 id="svg-polygons-polylines">SVG Polygons &amp; Polylines</h3>
+        <ul>
+            <li>Polygons are shapes with 3 or more straight sides. With the SVG
+                polygon
+                element you can create complex shapes.
+            </li>
+            <li>The polygon element requires 1 attribute which is the points.
+                The points
+                must be a set of coordinates where SVG
+                will take care of drawing lines between them in order.</li>
+            <li>Polylines are similar to polygons except polylines will not be
+                closed.
+                Despite the name, polylines will also
+                have a fill. Set the fill attribute to none to have no fill.</li>
+        </ul>
+        <h3 id="svg-paths">SVG Paths</h3>
+        <ul>
+            <li>Path elements allow you to create complex shapes. You can create
+                sides
+                that are either straight or curved.</li>
+            <li>You are also allowed to create multiple shapes using one
+                element.</li>
+            <li>The path element works differently than the other shapes. You
+                are
+                required to input commands along with your
+                coordinates to instruct SVG how to draw your shapes.</li>
+            <li>There are 2 types of commands which are absolute and relative.
+                Absolute
+                commands are created using uppercase
+                letters. Relative commands are created using lowercase letters.</li>
+        </ul>
+        <h3 id="svg-text">SVG Text</h3>
+        <ul>
+            <li>The text element allows you to create text inside SVG. Your text
+                may not
+                appear unless you set the x and y
+                coordinates.
+                Naturally, SVG will not be able to break your text into multiple
+                lines.
+                In these cases you may want to use the
+                tspan element to create multi line text.</li>
+            <li>You can use regular HTML inside the text element, but you may
+                need to
+                apply special attributes in order for them
+                to work. </li>
+        </ul>
+        <h3 id="svg-definitions-and-groups">SVG Definitions and Groups</h3>
+        <ul>
+            <li>Definitions allow you to create reusable elements. The benefit
+                is that
+                you won’t have to input the same values
+                each time. Just define it once and you’re set!</li>
+            <li>Any elements defined inside a definition will not be displayed.
+                You have
+                to use the use element and pass in the
+                ID of the definition in order to display it.</li>
+            <li>To group multiple elements together you can use the g element.
+                The g
+                element can hold any kind of shape and
+                allows you to manage complex shapes easier.</li>
+        </ul>
+        <h3 id="svg-text-paths">SVG Text Paths</h3>
+        <ul>
+            <li>You can create fancy text effects using text paths. Text paths
+                allow you
+                to use paths for text to be written on.
+                To create a text path you must first create a definition using
+                the path
+                element. You can use any commands and
+                coordinates you want.</li>
+            <li>Then you need to apply the textPath element to the text element
+                and pass
+                in the ID. The text must also be inside
+                this element for the path to take effect.</li>
+        </ul>
+        <h3 id="svg-clip-paths">SVG Clip Paths</h3>
+        <ul>
+            <li>Clip paths allow you to hide certain parts of a shape using
+                custom
+                paths. Anything inside will appear while
+                anything outside will disappear.</li>
+            <li>Clip paths only apply to elements they’re applied to. If a shape
+                that
+                doesn’t have a clip path applied to it,
+                but is touching the clip path, then it will still remain
+                unaffected.</li>
+        </ul>
+        <h3 id="creating-svg-elements-with-illustrator">Creating SVG Elements
+            with
+            Illustrator</h3>
+        <ul>
+            <li>Illustrator can be used to create SVG images. Just make sure you
+                select
+                svg as the file format when exporting.
+            </li>
+            <li>SVG files will have special attributes when you’re creating them
+                as a
+                separate file. This is just for the
+                browser to better understand everything inside.</li>
+            <li>D3 is used with SVG to create graphs and charts so be prepared
+                to use it
+                when we get started in the next
+                section!</li>
+        </ul>
+        <hr>
+        <h2 id="d3-fundamentals-a-name-d3-fund-a-">D3 Fundamentals <a
+                name="d3-fund"></a></h2>
+        <p><a href="/d3_fundamentals/index.html">Click here to go to code
+                examples</a></p>
+        <h3 id="setting-up">Setting Up</h3>
+        <ul>
+            <li>It’s always good practice to set the character encoding of your
+                HTML
+                documents. When working with D3 you’ll be
+                dealing with a lot of data so it’s important that everything
+                works as
+                intended.</li>
+            <li>Github is a site that allows you to store and share code with
+                other
+                developers. Most libraries are hosted on
+                Github.</li>
+            <li>Most libraries come with a minified version which is meant for
+                production when you’re finished your project. Use
+                the standard version during development.</li>
+            <li>D3 is split into multiple libraries for developers who only want
+                to load
+                what they’re going to use. The main
+                library includes everything at once for your convenience.</li>
+        </ul>
+        <h3 id="selections">Selections</h3>
+        <ul>
+            <li>As far as D3 is concerned, data is only text and numbers. Other
+                types of
+                data such as images, audio files, and
+                videos will not work with D3 as “data”.</li>
+            <li>D3 bridges the gap between your data and the visualization (the
+                HTML and
+                CSS). </li>
+            <li>Selections are objects that represent the HTML on your page. D3
+                will
+                take care of creating these objects and
+                fill them with properties/methods for you to use.</li>
+            <li>If you call the append() method, then the selection will also be
+                updated
+                to the element created.</li>
+        </ul>
+        <h3 id="manipulating-selections">Manipulating Selections</h3>
+        <ul>
+            <li>Transformation methods are functions that change how an element
+                looks
+                internally. This includes attributes or
+                the elements inside it.</li>
+            <li>The attr() method will add the attribute you pass in. It’s
+                important to
+                note that this will completely override
+                an attribute if it already exists.</li>
+            <li>A better alternative to adding classes to an element is by using
+                the
+                classed() method. If a class exists, then
+                it will not be removed if you try to add it.</li>
+            <li>You should always make sure you know what’s being returned. Some
+                methods
+                will return the current selection or an
+                entire new one. Check the documentation to make sure.</li>
+        </ul>
+        <h3 id="binding-data">Binding Data</h3>
+        <ul>
+            <li>D3 has something called a waiting room when you bind data to an
+                element.
+                If data can’t be bound to an element,
+                then the data will be placed inside the waiting room.</li>
+            <li>To access the data in the waiting room you need to call the
+                enter()
+                function. This will begin looping through
+                each piece of data.</li>
+            <li>The minute you create an element in the loop, D3 will bind the
+                current
+                piece of data to that element. This is
+                done automatically for you.</li>
+            <li>It’s always good practice to put the data into the waiting room
+                rather
+                than having elements prepared already.
+            </li>
+        </ul>
+        <h3 id="displaying-data">Displaying Data</h3>
+        <ul>
+            <li>Each element has access to the data it’s binded to. You can use
+                this as
+                an opportunity to change the outcome of
+                the element.
+                Each transformation function can accept an anonymous function
+                which will
+                passed the current data in the loop.
+            </li>
+        </ul>
+        <h3 id="loading-data-externally">Loading Data Externally</h3>
+        <ul>
+            <li>D3 supports 3 file formats which are plain text, csv and json.
+                You can
+                load each of these using functions
+                provided by the D3 request library.</li>
+            <li>CSV files are comma separated values. Each line is considered a
+                row.
+                Each comma separated value is considered a
+                column. The first row is used as the column names.</li>
+            <li>D3 takes the time to convert CSV data into objects and arrays
+                depending
+                on how it’s formatted.</li>
+            <li>JSON files hardly get affected as they’re objects and arrays to
+                begin
+                with. It’s preferable to use JSON code
+                rather than CSV for consistency.</li>
+        </ul>
+        <hr>
+        <h2 id="getting-to-know-scales-a-name-scales-a-">Getting to know Scales
+            <a name="scales"></a></h2>
+        <p><a href="/scales/index.html">Click here to go to code examples</a></p>
+        <h3 id="first-steps">First Steps</h3>
+        <ul>
+            <li>D3 can be used to create any type of visualization. It’s not
+                biased
+                towards nay chart or graph.</li>
+            <li>Adobe color is a tool that allows you to find great color
+                combinations
+                and even build your own.</li>
+            <li>You can use the data to change the outcome of the bar/chart.
+                Most
+                commonly used to manipulate the height or
+                height.</li>
+        </ul>
+        <h3 id="random-data">Random Data</h3>
+        <ul>
+            <li>Generating Random data can help battle test your graph as it
+                allows you
+                to cover more scenarios.</li>
+            <li>There are situations where clients may not be able to provide
+                you data
+                so you’ll be responsible for generating
+                dummy data in the mean time.</li>
+            <li>The D3 random library takes care of generating random data for
+                you.</li>
+        </ul>
+        <h3 id="using-svg">Using SVG</h3>
+        <ul>
+            <li>Moving SVG elements requires that you change their x and y
+                coordinates.
+                The X coordinate goes from left to right
+                and the y coordinate goes from top to bottom.</li>
+            <li>If you’re reusing values, then you should store it in a
+                variable. This
+                makes it easy to change later on if you
+                ever need to.</li>
+            <li>Labels are a way to identify a shape. Users will be able to
+                better
+                understand compare your visualization if you
+                provide labels.</li>
+            <li>Text anchoring is special to SVG. You can determine whether text
+                gets
+                pushed form its side or center point.</li>
+        </ul>
+        <h3 id="scatter-plot">Scatter Plot</h3>
+        <ul>
+            <li>Scatter plots allow you to chart large amounts of data. They are
+                circles
+                that represent 2 pieces of data. They
+                can also vary in size to show more impact over others.</li>
+            <li>Creating a scatter plot is similar to creating a bar graph. You
+                create
+                the elements, bind the data, create more
+                elements for the data and add details.</li>
+            <li>You can use the join() function to combine arrays to strings.
+                This can
+                be useful for displaying coordinates
+                stored in arrays.</li>
+            <li>Math is used to position and set the size of elements. D3 can
+                take care
+                of the more complex operations so you
+                don’t have to.</li>
+        </ul>
+        <h3 id="scales">Scales</h3>
+        <ul>
+            <li>Scales are functions that take your data and will lower or
+                increase the
+                values so that they can be used for
+                visualization.</li>
+            <li>The input domain is the original set of data. It’s the highest
+                and
+                lowest numbers in your data.</li>
+            <li>The output range is the numbers that the original data should be
+                scaled
+                to. These would usually be size of the
+                viewing area.</li>
+            <li>The D3 array library is a utility library that provides
+                functions for
+                working with arrays no matter how complex.
+                It’s included in the core by default so you don’t need to do
+                anything to
+                set it up.</li>
+        </ul>
+        <h3 id="applying-scales-to-visualizations">Applying Scales to
+            Visualizations</h3>
+        <ul>
+            <li>The d3.max() and d3.min() functions can be passed in accessor
+                functions
+                for complex array and object structures.
+            </li>
+            <li>An accessor function is a function that returns a value that’s
+                used for
+                grabbing certain data from an object or
+                array.</li>
+            <li>Adding padding to your visualizations is common so that shapes
+                and text
+                don’t get cut off from the viewing area.
+            </li>
+            <li>You can reverse the range and D3 will take care of scaling the
+                values
+                appropriately for you.</li>
+        </ul>
+        <h3 id="exploring-more-scales">Exploring More Scales</h3>
+        <ul>
+            <li>D3 provides various scales for various scenarios. An official
+                list of
+                scales can be found on the D3 Scales
+                library.</li>
+            <li>Each scale can be used for scaling different types of shapes
+                such as the
+                scaleSqrt() function for circles.</li>
+            <li>Some scales are used for data that don’t contain numeric values
+                such as
+                colors or categorical data.</li>
+        </ul>
+        <h3 id="time-scales">Time Scales</h3>
+        <ul>
+            <li>Dates in your data will most likely come in a format that
+                neither D3 or
+                JavaScript can understand. D3 only works
+                with Date Objects.</li>
+            <li>There are a set of functions that will take care of reading your
+                formatted dates and converting them into date
+                objects to use with scales and vice versa.</li>
+            <li>MomentJS is also a popular library for converting dates. You can
+                use
+                this if you’re comfortable with it.</li>
+            <li>D3’s time scale will read your dates and convert them into
+                numbers that
+                can be used to visualize your data.</li>
+        </ul>
+        <h3 id="adding-an-axis">Adding an Axis</h3>
+        <ul>
+            <li>An axis is a line with ticks that provide a way to visually
+                measure the
+                distance between certain points in a
+                graph. D3 provides a set of functions for creating an axis.</li>
+            <li>The axisTop() and axisBottom() functions are used for creating a
+                horizontal axis. The axisLeft() and axisRight()
+                functions are used for creating a vertical axis.</li>
+            <li>Unlike scales, these functions will draw the SVG elements for
+                you. It’s
+                good practice to store these generated
+                elements inside a group so they can be moved and managed easily.</li>
+            <li>You can use CSS to refine the outcome of your SVG shapes. The
+                more
+                cleaner a shape looks, the more resources is
+                required to render it.</li>
+        </ul>
+        <h3 id="refining-the-axis-and-adding-the-y-axis">Refining the Axis and
+            adding
+            the Y Axis</h3>
+        <ul>
+            <li>The ticks() function allows you to set a number of ticks an axis
+                should
+                have. The number will only be taken as a
+                suggestion.</li>
+            <li>The tickValues() function will allow you to completely control
+                how many
+                ticks are outputted along with the
+                actual values themselves. D3 will take the time to space them
+                out.</li>
+            <li>The tickFormat() function will allow you to format the text that
+                gets
+                outputted for each tick. You are provided
+                the data for each tick so you can manipulate it appropriately.</li>
+        </ul>
+        <hr>
+        <h2 id="animations-and-interactivity-a-name-anim-int-a-">Animations and
+            Interactivity <a name="anim-int"></a></h2>
+        <p><a href="/animations_and_interactivity/index.html">Click here to go
+                to code
+                examples</a></p>
+        <h3 id="ordinal-scales">Ordinal Scales</h3>
+        <ul>
+            <li>Ordinal scales are used to convert categorical data into numbers
+                that
+                can be used for your visualizations.</li>
+            <li>The definition of ordinal is relating to a “thing’s” position in
+                a
+                series.</li>
+            <li>D3 will evenly distribute your ordinal data. It’s important to
+                note that
+                it will apply padding at the end.</li>
+            <li>A band is a specific set of numbers in a range. The set of
+                numbers are
+                usually distributed evenly in a pattern.
+                Not always, but that’s usually the case.</li>
+        </ul>
+        <h3 id="refining-the-bar-graph">Refining the Bar Graph</h3>
+        <ul>
+            <li>You can use numeric data as ordinal data if you wish. Instead of
+                using
+                the numbers themselves, you can use their
+                index.</li>
+            <li>The band width is the distance between number in the band range.
+                D3
+                provides a function called bandwidth() which
+                will calculate this for you without the padding.</li>
+            <li>Band scales were made specifically for bar charts so it’s
+                recommend you
+                use them.</li>
+        </ul>
+        <h3 id="updating-the-bar-graph">Updating the Bar Graph</h3>
+        <ul>
+            <li>There are 3 situations you’ll find yourself in when it comes to
+                updating
+                data. This can be a change in your
+                original date, an addition or a removal.</li>
+            <li>Changes in data usually occur during an event. By default, D3
+                supports
+                all JavaScript events by using the on()
+                function on a selection.</li>
+            <li>The reverse() function is a JavaScript array function that will
+                take
+                care of reversing the values in your array.
+            </li>
+            <li>You can bind your data to the elements again to let D3 be aware
+                of the
+                change. You will have to redraw only the
+                elements affected and only change the attributes that were
+                affected.</li>
+        </ul>
+        <h3 id="transitions-and-animations">Transitions and Animations</h3>
+        <ul>
+            <li>Applying a transition is as simple as applying the transition()
+                function
+                your current selection. D3 will take
+                care of animating the attributes for you.</li>
+            <li>Transitions can only be applied to attributes that currently
+                exist.
+                Otherwise there will be no animation
+                applied.</li>
+            <li>You can control the duration of your transition by applying the
+                duration() function. The length of time is
+                measured in milliseconds.</li>
+            <li>You can delay a transition by applying the delay() function.
+                This is
+                also measured in milliseconds. Be careful
+                with your delays as it can be easy to ruin the user experience
+                with long
+                delays and animations.</li>
+        </ul>
+        <h3 id="updating-the-data">Updating the Data</h3>
+        <ul>
+            <li>If your data changes, then your visualization will not reflect
+                that
+                accurately. You’ll need to update the domain
+                before you do anything else. Just call the domain() function
+                again and
+                pass in the new minimum and maximum
+                values.</li>
+        </ul>
+        <h3 id="reinforcing-transitions-and-animations">Reinforcing Transitions
+            and
+            Animations</h3>
+        <ul>
+            <li>The axis needs to be updated when your data changes drastically.
+                If not,
+                then the data can be inaccurately read.
+            </li>
+            <li>You do not need to pass in the scales again as D3 will be able
+                to detect
+                those changes for you and update the
+                axis appropriately.</li>
+            <li>You are allowed to animate the axis by chaining the
+                transition(),
+                delay(), and duration() functions.</li>
+        </ul>
+        <h3 id="refining-the-scatterplot">Refining the Scatterplot</h3>
+        <ul>
+            <li>Clip paths allow you to hide portions of a shape that appears
+                outside of
+                its viewing area.</li>
+            <li>It’s more efficient to group your elements together and then
+                apply a
+                clipping path rather than applying clip
+                paths to each element individually.</li>
+            <li>Transitions have events called start and end. The start event is
+                triggered when the transitioned begins. The end
+                transition event is triggered when the transition ends. Each
+                element
+                will have their own transition events.</li>
+            <li>You can have multiple transitions occurring on the page.
+                However, you
+                can’t have multiple transitions applied to
+                the same element at the same time or else the previous
+                transitions will
+                be cancelled.</li>
+        </ul>
+        <h3 id="adding-data">Adding Data</h3>
+        <ul>
+            <li>When you add new data, you need to update your scales domain for
+                the new
+                minimum and maximum values.</li>
+            <li>The data() function returns a selection. The selection being the
+                elements that have data binded to them.</li>
+            <li>The elements that have data binded to them and the elements you
+                create
+                after moving them from the waiting room
+                are 2 different selections.</li>
+            <li>You can merge separate selections by calling the merge()
+                function. This
+                function must be chained after a
+                selection and the selection it will be merged with must be
+                passed into
+                the function.</li>
+        </ul>
+        <h3 id="removing-data">Removing Data</h3>
+        <ul>
+            <li>D3 has an exit mode which will store references to elements that
+                have no
+                data bound to them. You can call the
+                exit() function loop through these elements.</li>
+            <li>If you apply the remove() function to a transition, then the
+                function
+                will wait until the transition is
+                finished.</li>
+            <li>Data joins are the process of binding a value in your data to an
+                element. It’s the connection between the data
+                in your array and elements on the page.</li>
+            <li>By default, D3 will use index ordering which means the first
+                value in
+                the array is bound to the first element on
+                the page. So on and so forth.</li>
+        </ul>
+        <h3 id="mouse-hovers">Mouse Hovers</h3>
+        <ul>
+            <li>D3 supports all default JavaScript events including clicks and
+                hovers.</li>
+            <li>The on() function is provided the data and index which contains
+                the
+                value to each element in the array.</li>
+            <li>JavaScript animations and transitions give you more power as
+                opposed to
+                CSS. Use JavaScript if you need that
+                power and flexibility. Otherwise, use CSS.</li>
+            <li>Set the CSS property pointer-events to none if you don’t want
+                events
+                applied to a certain element.</li>
+        </ul>
+        <h3 id="sorting">Sorting</h3>
+        <ul>
+            <li>The d3.ascending() function will sort data and elements from
+                smallest to
+                biggest.</li>
+            <li>The d3.descending() function will sort data and elements from
+                biggest to
+                smallest.</li>
+            <li>You can give your transitions names to prevent collisions. This
+                will
+                mean you will have to interrupt animations
+                manually by using the interrupt() function.</li>
+        </ul>
+        <h3 id="fun-with-tooltips">Fun with Tooltips</h3>
+        <ul>
+            <li>There are 3 solutions for creating tooltips. The first is by
+                using the
+                text SVG element. This element can’t be
+                customized, but it’s the simplest solution.</li>
+            <li>You can create tooltips using SVG, but this is the most complex
+                solution
+                since SVG has a complex shape and
+                coordinate system.</li>
+            <li>The final solution is to just use plain HTML. The CSS position
+                properties make it easy to create tooltips. This
+                is one of the solutions where using HTML and SVG is ideal.</li>
+        </ul>
+        <hr>
+        <h2 id="layouts-a-name-layouts-a-">Layouts <a name="layouts"></a></h2>
+        <p><a href="/layouts/index.html">Click here to go to code examples</a></p>
+        <h3 id="line-charts">Line Charts</h3>
+        <ul>
+            <li>The D3 shape contains functions for creating complex shapes
+                using the
+                path element exclusively.</li>
+            <li>The d3.line() function will create a function that you can use
+                to draw
+                complex lines. It only draws 1 line and
+                not multiple lines.</li>
+            <li>The datum() function will bind 1 piece of data to 1 element.
+                There’s no
+                need to perform looping or use the enter
+                mode.
+                If your data contains negative numbers, then it’s up to you to
+                decide
+                how to approach that. The defined function
+                allows you to filter values in your data.</li>
+        </ul>
+        <h3 id="improving-the-visualization">Improving the Visualization</h3>
+        <ul>
+            <li>Area charts are similar to line charts. You create the
+                functions, then
+                bind the data to an element and call the
+                function to begin drawing the area.</li>
+            <li>Areas created by drawing 2 invisible lines. Anything in between
+                those
+                lines gets filled in with a color.
+                You have the option of specifying the coordinates together or
+                specifying
+                them separately.</li>
+        </ul>
+        <h3 id="pie-donut-charts">Pie &amp; Donut Charts</h3>
+        <ul>
+            <li>Pie and Donut charts are drawn by drawing the slices rather than
+                the
+                whole circle itself. These slices are then
+                combined together.</li>
+            <li>Arcs are the shapes D3 will draw for you using the d3.arc()
+                function.
+                Each arc has an inner radius and outer
+                radius. By setting the inner radius, you can make pie charts
+                into t
+                charts.</li>
+            <li>Layouts are functions that convert your current existing data
+                into data
+                that can be used to draw different types
+                of charts.</li>
+            <li>Radians are used to measure the degrees of angles in arcs. D3
+                will take
+                care of that conversion for you.</li>
+        </ul>
+        <h3 id="stacked-bar-charts">Stacked Bar charts</h3>
+        <ul>
+            <li>Stack layouts are used for creating stack charts like stack bar
+                graphs
+                or stack area charts.</li>
+            <li>Stack layouts work by categorizing your data and assigning start
+                and end
+                positions.</li>
+            <li>You need to call the keys() function to set the categories.</li>
+        </ul>
+        <h3 id="force-layouts">Force Layouts</h3>
+        <ul>
+            <li>Nodes are a unit of data. They’re mostly used in hierarchies of
+                data
+                like an HTML document.</li>
+            <li>Along with your usual data you also need to specify the
+                relationships
+                between the data.</li>
+            <li>To create a force, you need to use the forceSimulation()
+                function and
+                pass in the different forces using the
+                force() function. This function will determine the behavior of
+                the
+                visualization.</li>
+            <li>D3 will examine the data’s coordinates and determine if the
+                shapes are
+                too close or too far. It will then
+                proceed to adjust the coordinates until they’re within the
+                boundaries
+                set. The ticks event allows you to listen
+                for every change.</li>
+        </ul>
+        <hr>
+        <h2 id="maps-a-name-maps-a-">Maps <a name="maps"></a></h2>
+        <p><a href="/maps/index.html">Click here to go to code examples</a></p>
+        <h3 id="geojson-overview">GeoJSON Overview</h3>
+        <ul>
+            <li>GeoJSON is JSON that contains coordinates that can be used to
+                draw maps.</li>
+            <li>It’s recommended you verify the contents of your GeoJSON code
+                before you
+                use it. The geojson.io tool can help
+                you fix and verify your changes.</li>
+        </ul>
+        <h3 id="drawing-the-map-projections">Drawing the Map &amp; Projections</h3>
+        <ul>
+            <li>The D3 geo library will take care of creating and drawing maps
+                for you.</li>
+            <li>Projections are formulas on how a 3d map looks on a 2D plane.
+                There are
+                various projections and standards on the
+                d3 geo projection library page.</li>
+            <li>Maps are drawn as is. If you would like to scale down the map,
+                then you
+                need to use the scale() function. You
+                can use the translate() function to move the map as well.</li>
+            <li>It’s preferred to store your GeoJSON code inside a separate file
+                since
+                there are so many coordinates.</li>
+        </ul>
+        <h3 id="choropleth-maps">Choropleth Maps</h3>
+        <ul>
+            <li>Choropleth maps are maps that use color to highlight data
+                between
+                states. Example: To show heat, you can use a
+                dark shade of red to display heat intensity.</li>
+            <li>There is a tool called color brewer that will generate shades of
+                colors
+                for your maps.</li>
+            <li>It’s important to learn how to combine 2 data sources. You will
+                most
+                likely come across situations where you
+                have the data for the map and actual data in separate files.</li>
+        </ul>
+        <h3 id="adding-cities">Adding Cities</h3>
+        <ul>
+            <li>Cities help make reading maps more clearer for users. Placing
+                them on
+                your map can make it easier to navigate
+                around.</li>
+            <li>The projection() function returns an array containing the x and
+                y
+                coordinates.</li>
+            <li>The Math.sqrt() function is perfect for calculating the radius
+                of a
+                circle.</li>
+        </ul>
+        <h3 id="panning-the-map">Panning the Map</h3>
+        <ul>
+            <li>Panning is the ability to move a map in any direction without
+                distorting
+                the view.
+                To get the current offset you can use the projection.translate()
+                function which returns an array of the current
+                coordinates.
+                Since the coordinates system for SVG is top to bottom/left to
+                right,
+                then the values will most likely go in the
+                opposite direction you’d like to go.
+                Panning only works well for maps that are zoomed in so be sure
+                to
+                increase the scale and add a transition to
+                your panning.</li>
+        </ul>
+        <h3 id="dragging-the-map">Dragging the Map</h3>
+        <ul>
+            <li>The D3 drag library is able to detect drag events. This includes
+                touch
+                on mobile devices.</li>
+            <li>There’s a special property called d3.event that contains
+                information
+                about the drag event. This is not to be
+                confused with the event object passed into javascript events.</li>
+            <li>The d3.event.dx and d3.event.dy properties contain the distance
+                that was
+                dragged. The starting point is the
+                offset for the projection.</li>
+            <li>Dragging is only applied to the shape it’s added to. One simple
+                track to
+                make dragging available everywhere is
+                to add an invisible shape.</li>
+        </ul>
+        <h3 id="zooming">Zooming</h3>
+        <ul>
+            <li>The D3 drag library can also handle zooming. Natural zooming and
+                panning
+                needs to be in sync with unnatural
+                zooming and panning.</li>
+            <li>You need to use the translateBy() function to move the map when
+                panning
+                is done in an unnatural manner.</li>
+            <li>You need to use the scaleBy() function to zoom the map when
+                zooming is
+                done in an unnatural manner.</li>
+        </ul>
+        <hr>
+        <h2 id="wrapping-up-a-name-wrapping-a-">Wrapping up <a name="wrapping"></a></h2>
+        <p><a href="/wrapping/index.html">Click here to go to code examples</a></p>
+        <h3 id="responsive-charts">Responsive Charts</h3>
+        <ul>
+            <li>There are 2 solutions for creating responsive charts which is
+                using SVG
+                attributes or JavaScript events and
+                redrawing the chart. SVG attributes is the more modern and
+                elegant
+                solution.</li>
+            <li>The viewBox attribute determines the viewing area of your chart.
+                The
+                first 2 values are the starting points and
+                the next 2 are width/height of the area.</li>
+            <li>The preserveAspectRatio attribute is used to help with scaling
+                on
+                various devices. The xMidYMid ratio is usually
+                the best for most charts/graphs.</li>
+        </ul>
+    </body>
+</html>

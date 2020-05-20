@@ -2,6 +2,14 @@
 
 A collection of lecutre notes and coding example of d3 from [https://www.udemy.com/course/learn-d3js-for-data-visualization/](https://www.udemy.com/course/learn-d3js-for-data-visualization/) course, I will strongly suggest anyone who would like to get started with d3 to go purchase his courses, it provides a very good fundamental and a good start to your data visualization journey
 
+To take a look on the examples, you may checkout the source code or run:
+
+```bash
+node app.js
+```
+
+A localhost server will be hosted in port 3000
+
 ## Table of contents
 
 1. [Introduction](#introduction)

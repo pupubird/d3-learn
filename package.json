@@ -1,0 +1,23 @@
+{
+  "name": "d3",
+  "version": "1.0.0",
+  "description": "A collection of lecutre notes and coding example of d3 from [https://www.udemy.com/course/learn-d3js-for-data-visualization/](https://www.udemy.com/course/learn-d3js-for-data-visualization/) course, I will strongly suggest anyone who would like to get started with d3 to go purchase his courses, it provides a very good fundamental and a good start to your data visualization journey",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pupubird/d3-learn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pupubird/d3-learn/issues"
+  },
+  "homepage": "https://github.com/pupubird/d3-learn#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
