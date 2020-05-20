@@ -33,7 +33,7 @@ A collection of lecutre notes and coding example of d3 from [https://www.udemy.c
 
 ### Javascript and SVG Fundamentals <a name="js-svg-fund"></a>
 
-[Click here to go to code examples](javascript_and_svg_fundamentals)
+[Click here to go to code examples](javascript_and_svg_fundamentals/README.md)
 
 #### JavaScript Arrays & Objects
 
@@ -111,7 +111,7 @@ To create a text path you must first create a definition using the path element.
 
 ### D3 Fundamentals <a name="d3-fund"></a>
 
-[Click here to go to code examples](d3_fundamentals)
+[Click here to go to code examples](d3_fundamentals/README.md)
 
 #### Setting Up
 
@@ -155,7 +155,7 @@ Each transformation function can accept an anonymous function which will passed 
 
 ### Getting to know Scales <a name="scales"></a>
 
-[Click here to go to code examples](scales)
+[Click here to go to code examples](scales/README.md)
 
 #### First Steps
 
@@ -225,7 +225,7 @@ Each transformation function can accept an anonymous function which will passed 
 
 ### Animations and Interactivity <a name="anim-int"></a>
 
-[Click here to go to code examples](animations_and_interactivity)
+[Click here to go to code examples](animations_and_interactivity/README.md)
 
 #### Ordinal Scales
 
@@ -306,7 +306,7 @@ Each transformation function can accept an anonymous function which will passed 
 
 ### Layouts <a name="layouts"></a>
 
-[Click here to go to code examples](layouts)
+[Click here to go to code examples](layouts/README.md)
 
 #### Line Charts
 
@@ -343,7 +343,7 @@ You have the option of specifying the coordinates together or specifying them se
 
 ### Maps <a name="maps"></a>
 
-[Click here to go to code examples](maps)
+[Click here to go to code examples](maps/README.md)
 
 #### GeoJSON Overview
 
@@ -352,15 +352,15 @@ You have the option of specifying the coordinates together or specifying them se
 
 #### Drawing the Map & Projections
 
-- The D3 geo library will take care of creating and drawing maps for you. 
+- The D3 geo library will take care of creating and drawing maps for you.
 - Projections are formulas on how a 3d map looks on a 2D plane. There are various projections and standards on the d3 geo projection library page.
-- Maps are drawn as is. If you would like to scale down the map, then you need to use the scale() function. You can use the translate() function to move the map as well. 
+- Maps are drawn as is. If you would like to scale down the map, then you need to use the scale() function. You can use the translate() function to move the map as well.
 - It’s preferred to store your GeoJSON code inside a separate file since there are so many coordinates.
 
 #### Choropleth Maps
 
 - Choropleth maps are maps that use color to highlight data between states. Example: To show heat, you can use a dark shade of red to display heat intensity.
-- There is a tool called color brewer that will generate shades of colors for your maps. 
+- There is a tool called color brewer that will generate shades of colors for your maps.
 - It’s important to learn how to combine 2 data sources. You will most likely come across situations where you have the data for the map and actual data in separate files.
 
 #### Adding Cities
@@ -371,7 +371,7 @@ You have the option of specifying the coordinates together or specifying them se
 
 #### Panning the Map
 
-- Panning is the ability to move a map in any direction without distorting the view. 
+- Panning is the ability to move a map in any direction without distorting the view.
 To get the current offset you can use the projection.translate() function which returns an array of the current coordinates.
 Since the coordinates system for SVG is top to bottom/left to right, then the values will most likely go in the opposite direction you’d like to go.
 Panning only works well for maps that are zoomed in so be sure to increase the scale and add a transition to your panning.
@@ -391,7 +391,7 @@ Panning only works well for maps that are zoomed in so be sure to increase the s
 
 ### Wrapping up <a name="wrapping"></a>
 
-[Click here to go to code examples](wrapping)
+[Click here to go to code examples](wrapping/README.md)
 
 #### Responsive Charts
 
