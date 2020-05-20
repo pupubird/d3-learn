@@ -1,7 +1,7 @@
 
 # D3 Fundamentals <a name="d3-fund"></a>
 
-[Click here to go back](../)
+[Click here to go back](https://github.com/pupubird/d3-learn)
 
 #### Setting Up
 

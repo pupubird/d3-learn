@@ -1,7 +1,7 @@
 
 # Maps <a name="maps"></a>
 
-[Click here to go back](../)
+[Click here to go back](https://github.com/pupubird/d3-learn)
 
 #### GeoJSON Overview
 

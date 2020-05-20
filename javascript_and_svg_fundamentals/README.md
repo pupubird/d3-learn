@@ -1,7 +1,7 @@
 
 # Javascript and SVG Fundamentals <a name="js-svg-fund"></a>
 
-[Click here to go back](../)
+[Click here to go back](https://github.com/pupubird/d3-learn)
 
 #### JavaScript Arrays & Objects
 

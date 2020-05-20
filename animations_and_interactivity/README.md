@@ -1,7 +1,7 @@
 
 # Animations and Interactivity <a name="anim-int"></a>
 
-[Click here to go back](../)
+[Click here to go back](https://github.com/pupubird/d3-learn)
 
 #### Ordinal Scales
 
